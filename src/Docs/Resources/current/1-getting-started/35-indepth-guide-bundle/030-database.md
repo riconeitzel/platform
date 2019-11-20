@@ -53,6 +53,21 @@ By default, those are expected to be in a `Migration` directory, relative to you
 Since your base class' location is the `src` directory, that's also where the `Migration` directory has to be in: `<plugin root>/src/Migration`
 
 After creating the directory, create a new PHP file in there.
+
+You can use symfony's command line utility `bin/console`. 
+The corresponding command is `database:create-migration` command.
+
+    bin/console database:create-migration --plugin SwagBundleExample --name Bundle
+  
+<dl>
+    <dt>`--plugin`</dt>
+    <dd>defines your plugin's name and so the directory, in which your migration will be created</dd>
+    <dt>`--name`</dt>
+    <dd>defines a descriptive suffix for the filename. This suffix helps you to quickly understand, what the migration does when you look into the `Migration` directory.</dd>
+</dl>
+
+You can also create these files manually.
+
 Its name has to follow this pattern: `Migration<UnixTimeStap><MigrationName>.php`
 A real example would then look like this: `Migration1554708925Bundle.php`
 
